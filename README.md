@@ -67,4 +67,31 @@ internal/
   "name": "Alice",
   "dob": "1990-05-10"
 }
+### Other Endpoints
+
+- GET /users/{id} – Fetch user details with dynamically calculated age  
+- GET /users – List all users with age calculation
+
+##  How to Run the Project
+
+1. Clone the repository  
+   git clone https://github.com/akshayhat/user-dob-api.git
+
+2. Create PostgreSQL database  
+   CREATE DATABASE user_dob_db;
+
+3. Run migrations  
+   migrate -path db/migrations -database "postgres://<user>:<password>@localhost:5432/user_dob_db?sslmode=disable" up
+
+4. Start server  
+   go run cmd/server/main.go
+
+##  Why This Project
+
+This project was built to demonstrate clean backend architecture, 
+database correctness, and business logic implementation in Go.
+
+The scope was intentionally kept focused to emphasize quality, 
+maintainability, and real-world practices rather than excessive features.
+
 
