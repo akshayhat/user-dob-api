@@ -29,7 +29,7 @@ This project focuses on **clean architecture**, **type-safe database access**, a
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 cmd/server/main.go # Application entry point
 config/ # Database configuration
 db/
@@ -63,23 +63,33 @@ internal/
 **POST** `/users`
 
 ```json
+
 {
   "name": "Alice",
   "dob": "1990-05-10"
 }
-### Other Endpoints
+```
 
-- GET /users/{id} – Fetch user details with dynamically calculated age  
-- GET /users – List all users with age calculation
+## Other Endpoints
 
-##  How to Run the Project
+- **GET `/users/{id}`** – Fetch user details with dynamically calculated age  
+- **GET `/users`** – List all users with age calculation
 
-1. Clone the repository  
-   git clone https://github.com/akshayhat/user-dob-api.git
+---
 
-2. Create PostgreSQL database  
-   CREATE DATABASE user_dob_db;
+## How to Run the Project
 
+### 
+1. Clone the repository
+```bash
+git clone https://github.com/akshayhat/user-dob-api.git
+cd user-dob-api
+```
+###
+2. Create PostgreSQL database
+``` sql
+CREATE DATABASE user_dob_db;
+```
 3. Run migrations  
    migrate -path db/migrations -database "postgres://<user>:<password>@localhost:5432/user_dob_db?sslmode=disable" up
 
@@ -88,10 +98,6 @@ internal/
 
 ##  Why This Project
 
-This project was built to demonstrate clean backend architecture, 
-database correctness, and business logic implementation in Go.
+This project was built to demonstrate clean backend architecture, database correctness, and business logic implementation in Go.
 
-The scope was intentionally kept focused to emphasize quality, 
-maintainability, and real-world practices rather than excessive features.
-
-
+The scope was intentionally kept focused to emphasize quality, maintainability, and real-world practices rather than excessive features.
